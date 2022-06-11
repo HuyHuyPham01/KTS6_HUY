@@ -20,7 +20,7 @@ public class SanPhamManager {
 
     public void generateSanPhams() {
         SanPhams.clear();
-        SanPhams.add(new SanPham_KT6("image1", "Sản phẩm 1", 50000));
+        SanPhams.add(new SanPham_KT6("huy", "Huy Huy Phạm \n(Flash Sale - Freeship)", 0));
         SanPhams.add(new SanPham_KT6("image2", "Sản phẩm 2", 100000));
         SanPhams.add(new SanPham_KT6("image3", "Sản phẩm 3", 150000));
     }
