@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity_KT3"
+    android:orientation="vertical">
+
+
+    <Button
+        android:id="@+id/buttonLVCB_Mang"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView Cơ Bản - Mảng"
+        android:paddingVertical="20dp"/>
+
+    <Button
+        android:id="@+id/buttonLVCB_String_Array"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView Cơ Bản - String/Array"
+        android:paddingVertical="20dp"/>
+
+    <Button
+        android:id="@+id/buttonLVCB_Object"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="ListView Cơ Bản - Object"
+        android:paddingVertical="20dp"/>
+
+</LinearLayout>
