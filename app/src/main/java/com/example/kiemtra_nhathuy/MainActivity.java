@@ -93,31 +93,30 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void XuLyThoat() {
-        //Tạo đối tượng
         AlertDialog.Builder b = new AlertDialog.Builder(this);
 
-        //Thiết lập tiêu đề
         b.setTitle("Xác nhận");
         b.setMessage("Bạn có đồng ý thoát chương trình không?");
 
-        // Nút Ok
         b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
+                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                startActivity(intent);
+
+                Intent startMain = new Intent(Intent.ACTION_MAIN);
+                startActivity(startMain);
                 finish();
             }
         });
 
-        //Nút Cancel
         b.setNegativeButton("Không đồng ý", new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int id) {
                 dialog.cancel();
             }
         });
 
-        //Tạo dialog
         AlertDialog al = b.create();
 
-        //Hiển thị
         al.show();
     }
 
