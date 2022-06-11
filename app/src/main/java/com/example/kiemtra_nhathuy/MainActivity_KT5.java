@@ -17,15 +17,15 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.adapter.ProductAdapter;
-import com.example.kiemtra_nhathuy.model.Product;
-import com.example.kiemtra_nhathuy.model.SaleManager;
+import com.example.kiemtra_nhathuy.adapter.ProductAdapter_KT5;
+import com.example.kiemtra_nhathuy.model.Product_KT5;
+import com.example.kiemtra_nhathuy.model.ProductManager_KT5;
 
 import java.util.ArrayList;
 
 public class MainActivity_KT5 extends AppCompatActivity {
     ListView listViewShop;
-    ProductAdapter productAdapter;
+    ProductAdapter_KT5 productAdapterKT5;
     Button buttonAdd;
     Intent i;
     EditText editTextTenSP,editTextDonVi,editTextGiaSP;
@@ -46,15 +46,15 @@ public class MainActivity_KT5 extends AppCompatActivity {
         listViewShop = findViewById(R.id.listViewShop);
 
         // Khởi tạo các sản phẩm
-        SaleManager saleManager = SaleManager.get();
-        saleManager.generateProducts();
+        ProductManager_KT5 productManagerKT5 = ProductManager_KT5.get();
+        productManagerKT5.generateProducts();
 
-        // Lấy các product từ class saleManager
-        ArrayList products = saleManager.getProducts();
+        // Lấy các productKT5 từ class productManagerKT5
+        ArrayList products = productManagerKT5.getProducts();
         // Khởi tạo adapter
-        productAdapter = new ProductAdapter(MainActivity_KT5.this, products);
+        productAdapterKT5 = new ProductAdapter_KT5(MainActivity_KT5.this, products);
         // Hiển thị lên listview
-        listViewShop.setAdapter(productAdapter);
+        listViewShop.setAdapter(productAdapterKT5);
 
         // Thêm sản phẩm
         buttonAdd.setOnClickListener(new View.OnClickListener() {
@@ -79,7 +79,7 @@ public class MainActivity_KT5 extends AppCompatActivity {
         listViewShop.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Product c = productAdapter.getItem(position);
+                Product_KT5 c = productAdapterKT5.getItem(position);
 
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity_KT5.this);
 
@@ -88,7 +88,7 @@ public class MainActivity_KT5 extends AppCompatActivity {
 
                 b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        productAdapter.remove(c);
+                        productAdapterKT5.remove(c);
                         Toast.makeText(MainActivity_KT5.this,"Deleted",Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -170,15 +170,15 @@ public class MainActivity_KT5 extends AppCompatActivity {
         buttonLuu.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Product product = new Product();
-                product.setTenSp(editTextTenSP.getText().toString());
-                product.setDonVi(editTextDonVi.getText().toString());
+                Product_KT5 productKT5 = new Product_KT5();
+                productKT5.setTenSp(editTextTenSP.getText().toString());
+                productKT5.setDonVi(editTextDonVi.getText().toString());
                 String s = editTextGiaSP.getText().toString();
                 s = s.replace(",", "");
                 double price = Double.parseDouble(s);
-                product.setGiaSp(price);
-                productAdapter.add(product);
-                productAdapter.notifyDataSetChanged();
+                productKT5.setGiaSp(price);
+                productAdapterKT5.add(productKT5);
+                productAdapterKT5.notifyDataSetChanged();
                 builder.dismiss();
             }
         });

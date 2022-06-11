@@ -1,7 +1,6 @@
 package com.example.kiemtra_nhathuy.adapter;
 
 import android.app.Activity;
-import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,15 +11,13 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.kiemtra_nhathuy.R;
-import com.example.kiemtra_nhathuy.model.SanPham;
+import com.example.kiemtra_nhathuy.model.SanPham_KT4;
 
-import java.util.List;
-
-public class SanPhamAdapter extends ArrayAdapter<SanPham> {
+public class SanPhamAdapter_KT4 extends ArrayAdapter<SanPham_KT4> {
     Activity context;
     int resource;
 
-    public SanPhamAdapter(Activity context, int resource) {
+    public SanPhamAdapter_KT4(Activity context, int resource) {
         super(context, resource);
         this.context = context;
         this.resource = resource;
@@ -35,7 +32,7 @@ public class SanPhamAdapter extends ArrayAdapter<SanPham> {
         TextView textViewTen = customView.findViewById(R.id.textViewTen);
         TextView textViewGia = customView.findViewById(R.id.textViewGia);
 
-        SanPham sp = getItem(position);
+        SanPham_KT4 sp = getItem(position);
         imageViewHinh.setImageResource(sp.getHinh());
         textViewTen.setText("Sản phẩm "+ sp.getTen());
         textViewGia.setText(sp.getGia()+" 000 VNĐ");

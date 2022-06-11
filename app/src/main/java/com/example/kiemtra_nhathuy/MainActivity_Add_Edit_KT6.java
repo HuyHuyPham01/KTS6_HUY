@@ -16,9 +16,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.model.Product;
-import com.example.kiemtra_nhathuy.model.SaleManager;
-import com.example.kiemtra_nhathuy.model.SanPhamManager;
+import com.example.kiemtra_nhathuy.model.SanPhamManager_KT6;
 import com.example.kiemtra_nhathuy.model.SanPham_KT6;
 
 import java.text.DecimalFormat;
@@ -51,7 +49,7 @@ public class MainActivity_Add_Edit_KT6 extends AppCompatActivity {
         position = it.getExtras().getInt(EXTRA_POSITION);
 
         if (position != -1) {
-            sanPham_kt6 = (SanPham_KT6) SanPhamManager.get().getSanPhams().get(position);
+            sanPham_kt6 = (SanPham_KT6) SanPhamManager_KT6.get().getSanPhams().get(position);
             editTextTenSP.setText(sanPham_kt6.getTen());
             editTextHinhAnh.setText(sanPham_kt6.getHinh());
             String s = (new DecimalFormat("#,###.##")).format(sanPham_kt6.getGia());

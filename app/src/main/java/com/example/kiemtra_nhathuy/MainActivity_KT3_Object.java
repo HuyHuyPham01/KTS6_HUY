@@ -5,9 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
@@ -18,16 +16,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.model.Contact;
-
-import java.util.ArrayList;
+import com.example.kiemtra_nhathuy.model.Contact_KT3;
 
 public class MainActivity_KT3_Object extends AppCompatActivity {
     ListView listView_Objetc;
     TextView textViewID,textViewName,textViewPhone;
     EditText editTextID,editTextName,editTextPhone;
     Button buttonSave;
-    ArrayAdapter<Contact> arrayAdapterContact;
+    ArrayAdapter<Contact_KT3> arrayAdapterContact;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,7 +43,7 @@ public class MainActivity_KT3_Object extends AppCompatActivity {
         listView_Objetc = findViewById(R.id.listView_Object);
         buttonSave = findViewById(R.id.buttonSave);
 
-        arrayAdapterContact = new ArrayAdapter<Contact>(MainActivity_KT3_Object.this, android.R.layout.simple_list_item_1);
+        arrayAdapterContact = new ArrayAdapter<Contact_KT3>(MainActivity_KT3_Object.this, android.R.layout.simple_list_item_1);
         listView_Objetc.setAdapter(arrayAdapterContact);
 
         buttonSave.setOnClickListener(new View.OnClickListener() {
@@ -61,7 +57,7 @@ public class MainActivity_KT3_Object extends AppCompatActivity {
         listView_Objetc.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Contact c = arrayAdapterContact.getItem(position);
+                Contact_KT3 c = arrayAdapterContact.getItem(position);
                 editTextID.setText(c.getId()+"");
                 editTextName.setText(c.getName());
                 editTextPhone.setText(c.getPhone()+"");
@@ -71,7 +67,7 @@ public class MainActivity_KT3_Object extends AppCompatActivity {
         listView_Objetc.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                Contact c = arrayAdapterContact.getItem(position);
+                Contact_KT3 c = arrayAdapterContact.getItem(position);
 
                 //Tạo đối tượng
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity_KT3_Object.this);
@@ -106,7 +102,7 @@ public class MainActivity_KT3_Object extends AppCompatActivity {
     }
 
     private void XuLySave() {
-        Contact c = new Contact();
+        Contact_KT3 c = new Contact_KT3();
         c.setId(Integer.parseInt(editTextID.getText().toString()));
         c.setName(editTextName.getText().toString());
         c.setPhone(editTextPhone.getText().toString());

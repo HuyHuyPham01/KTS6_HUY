@@ -11,17 +11,15 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.adapter.SanPhamAdapter;
-import com.example.kiemtra_nhathuy.model.Contact;
-import com.example.kiemtra_nhathuy.model.SanPham;
+import com.example.kiemtra_nhathuy.adapter.SanPhamAdapter_KT4;
+import com.example.kiemtra_nhathuy.model.SanPham_KT4;
 
 public class MainActivity_KT4 extends AppCompatActivity {
     ListView listView_NangCao;
-    SanPhamAdapter sanPhamAdapter;
+    SanPhamAdapter_KT4 sanPhamAdapterKT4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,13 +31,13 @@ public class MainActivity_KT4 extends AppCompatActivity {
         actionBar.setDisplayHomeAsUpEnabled(true);
 
         listView_NangCao = findViewById(R.id.listView_NangCao);
-        sanPhamAdapter = new SanPhamAdapter(MainActivity_KT4.this,R.layout.item_kt4);
-        listView_NangCao.setAdapter(sanPhamAdapter);
+        sanPhamAdapterKT4 = new SanPhamAdapter_KT4(MainActivity_KT4.this,R.layout.item_kt4);
+        listView_NangCao.setAdapter(sanPhamAdapterKT4);
 
         listView_NangCao.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                SanPham sp = sanPhamAdapter.getItem(i);
+                SanPham_KT4 sp = sanPhamAdapterKT4.getItem(i);
                 Toast.makeText(MainActivity_KT4.this, "Bạn chọn: Sản Phẩm " + sp.getTen(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -47,7 +45,7 @@ public class MainActivity_KT4 extends AppCompatActivity {
         listView_NangCao.setOnItemLongClickListener(new AdapterView.OnItemLongClickListener() {
             @Override
             public boolean onItemLongClick(AdapterView<?> parent, View view, int position, long id) {
-                SanPham c = sanPhamAdapter.getItem(position);
+                SanPham_KT4 c = sanPhamAdapterKT4.getItem(position);
 
                 //Tạo đối tượng
                 AlertDialog.Builder b = new AlertDialog.Builder(MainActivity_KT4.this);
@@ -59,7 +57,7 @@ public class MainActivity_KT4 extends AppCompatActivity {
                 // Nút Ok
                 b.setPositiveButton("Đồng ý", new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int id) {
-                        sanPhamAdapter.remove(c);
+                        sanPhamAdapterKT4.remove(c);
                         Toast.makeText(MainActivity_KT4.this,"Deleted",Toast.LENGTH_SHORT).show();
                     }
                 });
@@ -80,16 +78,16 @@ public class MainActivity_KT4 extends AppCompatActivity {
             }
         });
 
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_1,"1",60));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_2,"2",70));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_3,"3",75));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_4,"4",80));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_5,"5",50));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_6,"6",40));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_7,"7",20));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_8,"8",10));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_9,"9",65));
-        sanPhamAdapter.add(new SanPham(R.drawable.img_kt4_10,"10",25));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_1,"1",60));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_2,"2",70));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_3,"3",75));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_4,"4",80));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_5,"5",50));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_6,"6",40));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_7,"7",20));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_8,"8",10));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_9,"9",65));
+        sanPhamAdapterKT4.add(new SanPham_KT4(R.drawable.img_kt4_10,"10",25));
 
     }
 

@@ -1,18 +1,18 @@
 package com.example.kiemtra_nhathuy.model;
 
-public class Product {
+public class Product_KT5 {
     String tenSp;
     String donVi;
     double giaSp;
 
-    public Product(){
+    public Product_KT5(){
         tenSp = "";
         donVi = "";
         giaSp = 0;
     }
 
 
-    public Product(String tenSp, String donVi, double giaSp) {
+    public Product_KT5(String tenSp, String donVi, double giaSp) {
         this.tenSp = tenSp;
         this.donVi = donVi;
         this.giaSp = giaSp;

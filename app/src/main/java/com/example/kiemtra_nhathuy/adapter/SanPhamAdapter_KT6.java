@@ -12,7 +12,6 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.kiemtra_nhathuy.R;
-import com.example.kiemtra_nhathuy.model.SanPham;
 import com.example.kiemtra_nhathuy.model.SanPham_KT6;
 
 import java.text.DecimalFormat;

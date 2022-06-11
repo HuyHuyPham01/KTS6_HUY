@@ -2,11 +2,11 @@ package com.example.kiemtra_nhathuy.model;
 
 import java.util.ArrayList;
 
-public class SanPhamManager {
+public class SanPhamManager_KT6 {
 
     private ArrayList SanPhams;
 
-    public SanPhamManager() {
+    public SanPhamManager_KT6() {
         SanPhams = new ArrayList();
     }
 
@@ -25,11 +25,11 @@ public class SanPhamManager {
         SanPhams.add(new SanPham_KT6("image3", "Sản phẩm 3", 150000));
     }
 
-    private static SanPhamManager sanPhamManager;
+    private static SanPhamManager_KT6 sanPhamManagerKT6;
 
-    public static SanPhamManager get() {
-        if (sanPhamManager == null)
-            sanPhamManager = new SanPhamManager();
-        return sanPhamManager;
+    public static SanPhamManager_KT6 get() {
+        if (sanPhamManagerKT6 == null)
+            sanPhamManagerKT6 = new SanPhamManager_KT6();
+        return sanPhamManagerKT6;
     }
 }

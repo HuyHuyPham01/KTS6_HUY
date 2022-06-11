@@ -10,15 +10,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 
 import com.example.kiemtra_nhathuy.R;
-import com.example.kiemtra_nhathuy.model.Product;
+import com.example.kiemtra_nhathuy.model.Product_KT5;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
 
-public class ProductAdapter extends ArrayAdapter<Product> {
+public class ProductAdapter_KT5 extends ArrayAdapter<Product_KT5> {
     Activity activity;
 
-    public ProductAdapter(Activity activity, ArrayList products) {
+    public ProductAdapter_KT5(Activity activity, ArrayList products) {
         super(activity,0, products);
         this.activity = activity;
     }
@@ -35,10 +35,10 @@ public class ProductAdapter extends ArrayAdapter<Product> {
         TextView textViewDonVi = convertView.findViewById(R.id.textViewDonVi);
         TextView textViewGiaSP = convertView.findViewById(R.id.textViewGiaSP);
 
-        Product product = getItem(position);
-        textViewTenSP.setText(product.getTenSp());
-        textViewDonVi.setText(product.getDonVi());
-        String s = (new DecimalFormat("#,###.##")).format(product.getGiaSp());
+        Product_KT5 productKT5 = getItem(position);
+        textViewTenSP.setText(productKT5.getTenSp());
+        textViewDonVi.setText(productKT5.getDonVi());
+        String s = (new DecimalFormat("#,###.##")).format(productKT5.getGiaSp());
         textViewGiaSP.setText(s);
         return convertView;
     }

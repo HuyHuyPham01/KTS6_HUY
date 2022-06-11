@@ -16,8 +16,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.model.Product;
-import com.example.kiemtra_nhathuy.model.SaleManager;
+import com.example.kiemtra_nhathuy.model.ProductManager_KT5;
+import com.example.kiemtra_nhathuy.model.Product_KT5;
 
 import java.text.DecimalFormat;
 
@@ -25,7 +25,7 @@ public class MainActivity_Add_Edit_KT5 extends AppCompatActivity {
     public static final String EXTRA_POSITION = "position";
     Button buttonLuu,buttonThoat;
     EditText editTextTenSP,editTextDonVi,editTextGiaSP;
-    Product product;
+    Product_KT5 productKT5;
     int position;
 
     @Override
@@ -49,15 +49,15 @@ public class MainActivity_Add_Edit_KT5 extends AppCompatActivity {
         position = it.getExtras().getInt(EXTRA_POSITION);
 
         if (position != -1) {
-            product = (Product) SaleManager.get().getProducts().get(position);
-            editTextTenSP.setText(product.getTenSp());
-            editTextDonVi.setText(product.getDonVi());
-            String s = (new DecimalFormat("#,###.##")).format(product.getGiaSp());
+            productKT5 = (Product_KT5) ProductManager_KT5.get().getProducts().get(position);
+            editTextTenSP.setText(productKT5.getTenSp());
+            editTextDonVi.setText(productKT5.getDonVi());
+            String s = (new DecimalFormat("#,###.##")).format(productKT5.getGiaSp());
             editTextGiaSP.setText(s);
         }
 
         if(position == -1) {
-            product = new Product();
+            productKT5 = new Product_KT5();
             Log.d("position", "-1");
         }
 
@@ -66,12 +66,12 @@ public class MainActivity_Add_Edit_KT5 extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 // Lấy dữ liệu từ layout để cập nhật lại các sản phẩm trong mảng
-                product.setTenSp(editTextTenSP.getText().toString());
-                product.setDonVi(editTextDonVi.getText().toString());
+                productKT5.setTenSp(editTextTenSP.getText().toString());
+                productKT5.setDonVi(editTextDonVi.getText().toString());
                 String s = editTextGiaSP.getText().toString();
                 s = s.replace(",", "");
                 double price = Double.parseDouble(s);
-                product.setGiaSp(price);
+                productKT5.setGiaSp(price);
                 Intent returnIntent = new Intent();
                 setResult(Activity.RESULT_OK, returnIntent);
                 finish();

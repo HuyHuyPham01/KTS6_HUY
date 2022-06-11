@@ -1,11 +1,11 @@
 package com.example.kiemtra_nhathuy.model;
 
-public class SanPham {
+public class SanPham_KT4 {
     int Hinh;
     String Ten;
     int Gia;
 
-    public SanPham(int hinh, String ten, int gia) {
+    public SanPham_KT4(int hinh, String ten, int gia) {
         Hinh = hinh;
         Ten = ten;
         Gia = gia;

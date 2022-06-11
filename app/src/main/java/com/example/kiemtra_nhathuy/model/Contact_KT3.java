@@ -1,11 +1,11 @@
 package com.example.kiemtra_nhathuy.model;
 
-public class Contact {
+public class Contact_KT3 {
     int id;
     String name;
     String phone;
 
-    public Contact() {
+    public Contact_KT3() {
         this.id = id;
         this.name = name;
         this.phone = phone;

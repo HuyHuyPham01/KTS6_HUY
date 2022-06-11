@@ -17,13 +17,8 @@ import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.kiemtra_nhathuy.adapter.ProductAdapter;
-import com.example.kiemtra_nhathuy.adapter.SanPhamAdapter;
 import com.example.kiemtra_nhathuy.adapter.SanPhamAdapter_KT6;
-import com.example.kiemtra_nhathuy.model.Product;
-import com.example.kiemtra_nhathuy.model.SaleManager;
-import com.example.kiemtra_nhathuy.model.SanPham;
-import com.example.kiemtra_nhathuy.model.SanPhamManager;
+import com.example.kiemtra_nhathuy.model.SanPhamManager_KT6;
 import com.example.kiemtra_nhathuy.model.SanPham_KT6;
 
 import java.util.ArrayList;
@@ -51,11 +46,11 @@ public class MainActivity_KT6 extends AppCompatActivity {
         listView_NangCao = findViewById(R.id.listView_NangCao);
 
         // Khởi tạo các sản phẩm
-        SanPhamManager sanPhamManager = SanPhamManager.get();
-        sanPhamManager.generateSanPhams();
+        SanPhamManager_KT6 sanPhamManagerKT6 = SanPhamManager_KT6.get();
+        sanPhamManagerKT6.generateSanPhams();
 
-        // Lấy các product từ class saleManager
-        ArrayList sanphams = sanPhamManager.getSanPhams();
+        // Lấy các productKT5 từ class saleManager
+        ArrayList sanphams = sanPhamManagerKT6.getSanPhams();
         // Khởi tạo adapter
         sanPhamAdapter_kt6 = new SanPhamAdapter_KT6(MainActivity_KT6.this, sanphams);
         // Hiển thị lên listview
